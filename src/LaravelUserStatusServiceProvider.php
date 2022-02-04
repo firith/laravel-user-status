@@ -4,7 +4,6 @@ namespace Firith\LaravelUserStatus;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Firith\LaravelUserStatus\Commands\LaravelUserStatusCommand;
 
 class LaravelUserStatusServiceProvider extends PackageServiceProvider
 {
@@ -17,9 +16,11 @@ class LaravelUserStatusServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-user-status')
-            ->hasConfigFile()
-            ->hasViews()
+//            ->hasConfigFile()
+//            ->hasViews()
+
             ->hasMigration('add_enabled_field_to_users_table')
-            ->hasCommand(LaravelUserStatusCommand::class);
+            ->hasTranslations();
+//            ->hasCommand(LaravelUserStatusCommand::class);
     }
 }

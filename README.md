@@ -1,20 +1,5 @@
 # This is my package laravel-user-status
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/firith/laravel-user-status.svg?style=flat-square)](https://packagist.org/packages/firith/laravel-user-status)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/firith/laravel-user-status/run-tests?label=tests)](https://github.com/firith/laravel-user-status/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/firith/laravel-user-status/Check%20&%20fix%20styling?label=code%20style)](https://github.com/firith/laravel-user-status/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/firith/laravel-user-status.svg?style=flat-square)](https://packagist.org/packages/firith/laravel-user-status)
-
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-user-status.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-user-status)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
-
 ## Installation
 
 You can install the package via composer:
@@ -26,7 +11,7 @@ composer require firith/laravel-user-status
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-user-status-migrations"
+php artisan vendor:publish --tag="user-status-migrations"
 php artisan migrate
 ```
 
@@ -52,8 +37,14 @@ php artisan vendor:publish --tag="laravel-user-status-views"
 ## Usage
 
 ```php
-$laravelUserStatus = new Firith\LaravelUserStatus();
-echo $laravelUserStatus->echoPhrase('Hello, Firith!');
+namespace App\Http\Middleware;
+
+use Firith\LaravelUserStatus\Http\Middleware\CheckBannedUser;
+
+class CheckBanned extends CheckBannedUser
+{
+
+}
 ```
 
 ## Testing
