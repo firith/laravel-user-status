@@ -19,7 +19,7 @@ class LaravelUserStatusServiceProvider extends PackageServiceProvider
             ->name('laravel-user-status')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_laravel-user-status_table')
+            ->hasMigration('add_enabled_field_to_users_table')
             ->hasCommand(LaravelUserStatusCommand::class);
     }
 }

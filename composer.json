@@ -51,10 +51,7 @@
         "laravel": {
             "providers": [
                 "Firith\\LaravelUserStatus\\LaravelUserStatusServiceProvider"
-            ],
-            "aliases": {
-                "LaravelUserStatus": "Firith\\LaravelUserStatus\\Facades\\LaravelUserStatus"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",
